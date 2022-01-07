@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block pageHead %}
+    <h1>Update Resource</h1>
+{% endblock %}
+
+{% block content %}
+
+    {% if messages %}
+        
+    {% for message in messages %}
+    <!-- <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li> -->
+
+    <div class="alert">
+        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+        <strong>Success!</strong> {{message}}
+    </div>
+
+    <!-- <script>alert('{{message}}')</script> -->
+    {% endfor %}
+    {% endif %}
+    
+    {% crispy form %}
+
+{% endblock %}
